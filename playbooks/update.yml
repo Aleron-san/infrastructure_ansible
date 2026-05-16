@@ -1,0 +1,6 @@
+---
+- name: Обновление пакетов
+  hosts: all
+  become: true
+  roles:
+    - update-packages
