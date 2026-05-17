@@ -1,0 +1,24 @@
+---
+- name: Создание нового пользователья sudo
+  hosts: Grafana
+  become: true
+
+  vars:
+    new_user: sheremet
+    user_password: 'Kfk8u2s6as'
+
+  tasks:
+    - name: Создание пользователя
+      ansible.builtin.user:
+        name: "{{ new_user }}"
+        shell: /bin/bash
+        create_home: true
+        state: present
+        password: "{{ user_password | password_hash('sha512') }}" 
+
+    - name: Добавление в группу sudo
+      ansible.builtin.user:
+        name: "{{ new_user }}"
+        groups: sudo
+        append: true
+

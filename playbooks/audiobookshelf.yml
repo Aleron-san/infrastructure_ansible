@@ -1,0 +1,7 @@
+---
+- name: Установка Audiobookshelf
+  hosts: Audiobook
+  become: true
+
+  roles:
+    - audiobookshelf

@@ -1,0 +1,7 @@
+---
+- name: Configure timezone and time sync
+  hosts: all
+  become: true
+
+  roles:
+    - timezone
