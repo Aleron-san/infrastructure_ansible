@@ -1,0 +1,7 @@
+---
+- name: Установка Jellyfin
+  hosts: Jellyfin
+  become: true
+
+  roles:
+    - jellyfin
