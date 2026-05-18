@@ -1,0 +1,6 @@
+- name:  node
+  hosts: all
+  become: true
+
+  roles:
+    - nodeexp
